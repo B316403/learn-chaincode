@@ -1,5 +1,5 @@
 // Wallet-BC project Wallet-BC.go
-package Wallet-BC
+package Wallet_BC
 
 type User struct {
 	Name     string 'json:"name"'
