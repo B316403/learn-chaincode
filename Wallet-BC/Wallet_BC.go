@@ -1,7 +1,7 @@
 type User struct {
-	Name     string 'json:"name"'
+	Name string 'json:"name"'
 	Password string 'json:"password"'
-	Balance  int    'json:"balance"'
+	Balance int 'json:"balance"'
 }
 
 // Init resets all the things
