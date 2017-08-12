@@ -1,11 +1,28 @@
 package Wallet_BC
 
+import (
+	"errors"
+	"fmt"
+
+	"github.com/hyperledger/fabric/core/chaincode/shim"
+)
+
+// SimpleChaincode example simple Chaincode implementation
+type SimpleChaincode struct {
+}
+
 type User struct {
 	Name string 'json:"name"'
 	Password string 'json:"password"'
 	Balance int 'json:"balance"'
 }
 
+func main() {
+	err := shim.Start(new(SimpleChaincode))
+	if err != nil {
+		fmt.Printf("Error starting Simple chaincode: %s", err)
+	}
+}
 // Init resets all the things
 func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
 
